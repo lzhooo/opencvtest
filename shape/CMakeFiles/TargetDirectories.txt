@@ -1,0 +1,3 @@
+/home/lzhoo/桌面/ocv_test/shape/CMakeFiles/rebuild_cache.dir
+/home/lzhoo/桌面/ocv_test/shape/CMakeFiles/edit_cache.dir
+/home/lzhoo/桌面/ocv_test/shape/CMakeFiles/opencv_example.dir
