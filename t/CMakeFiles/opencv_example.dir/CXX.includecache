@@ -6,20 +6,14 @@
 
 #IncludeRegexTransform: 
 
-/home/lzhoo/桌面/ocv_test/t/t.cpp
-iostream
--
+/home/lzhoo/opencvtest/t/t.cpp
 opencv2/opencv.hpp
 -
-opencv2/core/core.hpp
-/home/lzhoo/桌面/ocv_test/t/opencv2/core/core.hpp
-opencv2/highgui/highgui.hpp
-/home/lzhoo/桌面/ocv_test/t/opencv2/highgui/highgui.hpp
-opencv2/imgproc/imgproc.hpp
-/home/lzhoo/桌面/ocv_test/t/opencv2/imgproc/imgproc.hpp
-opencv2/features2d/features2d.hpp
-/home/lzhoo/桌面/ocv_test/t/opencv2/features2d/features2d.hpp
-vector
+iostream
+-
+math.h
+-
+string.h
 -
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
@@ -93,10 +87,6 @@ opencv2/core/check.hpp
 /usr/local/include/opencv4/opencv2/core/check.hpp
 opencv2/core/base.hpp
 -
-
-/usr/local/include/opencv4/opencv2/core/core.hpp
-opencv2/core.hpp
-/usr/local/include/opencv4/opencv2/core/opencv2/core.hpp
 
 /usr/local/include/opencv4/opencv2/core/cuda.hpp
 opencv2/core.hpp
@@ -423,10 +413,6 @@ opencv2/core.hpp
 /usr/local/include/opencv4/opencv2/opencv2/core.hpp
 opencv2/flann/miniflann.hpp
 /usr/local/include/opencv4/opencv2/opencv2/flann/miniflann.hpp
-
-/usr/local/include/opencv4/opencv2/features2d/features2d.hpp
-opencv2/features2d.hpp
-/usr/local/include/opencv4/opencv2/features2d/opencv2/features2d.hpp
 
 /usr/local/include/opencv4/opencv2/flann.hpp
 opencv2/core.hpp
@@ -862,10 +848,6 @@ opencv2/imgcodecs.hpp
 opencv2/videoio.hpp
 /usr/local/include/opencv4/opencv2/opencv2/videoio.hpp
 
-/usr/local/include/opencv4/opencv2/highgui/highgui.hpp
-opencv2/highgui.hpp
-/usr/local/include/opencv4/opencv2/highgui/opencv2/highgui.hpp
-
 /usr/local/include/opencv4/opencv2/imgcodecs.hpp
 opencv2/core.hpp
 /usr/local/include/opencv4/opencv2/opencv2/core.hpp
@@ -873,10 +855,6 @@ opencv2/core.hpp
 /usr/local/include/opencv4/opencv2/imgproc.hpp
 opencv2/core.hpp
 /usr/local/include/opencv4/opencv2/opencv2/core.hpp
-
-/usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp
-opencv2/imgproc.hpp
-/usr/local/include/opencv4/opencv2/imgproc/opencv2/imgproc.hpp
 
 /usr/local/include/opencv4/opencv2/ml.hpp
 opencv2/core.hpp

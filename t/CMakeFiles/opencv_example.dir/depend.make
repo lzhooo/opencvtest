@@ -9,7 +9,6 @@ CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/core/a
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/core/base.hpp
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/core/bufferpool.hpp
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/core/check.hpp
-CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/core/core.hpp
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/core/cuda.hpp
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/core/cuda.inl.hpp
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/core/cuda_types.hpp
@@ -46,7 +45,6 @@ CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/dnn/la
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/dnn/version.hpp
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/features2d.hpp
-CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/features2d/features2d.hpp
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/flann.hpp
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/flann/all_indices.h
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/flann/allocator.h
@@ -80,10 +78,8 @@ CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/flann/
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/flann/saving.h
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/flann/timer.h
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/highgui.hpp
-CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/highgui/highgui.hpp
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/imgcodecs.hpp
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/imgproc.hpp
-CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/ml.hpp
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/ml/ml.inl.hpp
 CMakeFiles/opencv_example.dir/t.cpp.o: /usr/local/include/opencv4/opencv2/objdetect.hpp

@@ -44,10 +44,10 @@ RM = /home/lzhoo/cmake-3.16.0-Linux-x86_64/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lzhoo/桌面/ocv_test/t
+CMAKE_SOURCE_DIR = /home/lzhoo/opencvtest/t
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lzhoo/桌面/ocv_test/t
+CMAKE_BINARY_DIR = /home/lzhoo/opencvtest/t
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ clean: CMakeFiles/opencv_example.dir/clean
 CMakeFiles/opencv_example.dir/all:
 	$(MAKE) -f CMakeFiles/opencv_example.dir/build.make CMakeFiles/opencv_example.dir/depend
 	$(MAKE) -f CMakeFiles/opencv_example.dir/build.make CMakeFiles/opencv_example.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lzhoo/桌面/ocv_test/t/CMakeFiles --progress-num=1,2 "Built target opencv_example"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lzhoo/opencvtest/t/CMakeFiles --progress-num=1,2 "Built target opencv_example"
 .PHONY : CMakeFiles/opencv_example.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/opencv_example.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lzhoo/桌面/ocv_test/t/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lzhoo/opencvtest/t/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/opencv_example.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lzhoo/桌面/ocv_test/t/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lzhoo/opencvtest/t/CMakeFiles 0
 .PHONY : CMakeFiles/opencv_example.dir/rule
 
 # Convenience name for target.

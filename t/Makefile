@@ -48,10 +48,10 @@ RM = /home/lzhoo/cmake-3.16.0-Linux-x86_64/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lzhoo/桌面/ocv_test/t
+CMAKE_SOURCE_DIR = /home/lzhoo/opencvtest/t
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lzhoo/桌面/ocv_test/t
+CMAKE_BINARY_DIR = /home/lzhoo/opencvtest/t
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lzhoo/桌面/ocv_test/t/CMakeFiles /home/lzhoo/桌面/ocv_test/t/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lzhoo/opencvtest/t/CMakeFiles /home/lzhoo/opencvtest/t/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lzhoo/桌面/ocv_test/t/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lzhoo/opencvtest/t/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

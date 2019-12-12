@@ -1,4 +1,4 @@
-# Install script for directory: /home/lzhoo/桌面/ocv_test/t
+# Install script for directory: /home/lzhoo/opencvtest/t
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/lzhoo/桌面/ocv_test/t/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/lzhoo/opencvtest/t/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
