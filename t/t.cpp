@@ -153,7 +153,7 @@
 #include <iostream>
 #include <math.h>
 #include <string.h>
-
+#include <unistd.h>
 using namespace cv;
 using namespace std;
 
@@ -230,7 +230,7 @@ void draw(Mat &reslutImage,Mat &dst)
         }
 
         double area = contourArea(contours[t]);
-        if (area < 100) continue;
+        if (area < 10000) continue;
         // 通过宽高比进行过滤
         Rect rect = boundingRect(contours[t]);
         float ratio = float(rect.width) / float(rect.height);
@@ -245,20 +245,20 @@ void draw(Mat &reslutImage,Mat &dst)
             int y = rect.y + rect.height / 2;
             cc = Point(x, y);
             circle(reslutImage, cc, line_size, Scalar(0, 0, 255), 2, 8, 0);
+            // cout<<rect.width<<" "<<rect.height<<" "<<area<<endl;
+            // imshow(to_string(t),reslutImage);
         }
     }
 }
 int main(int argc, char ** argv)
 {
-    Mat src, dst, gray_src,reslutImage;
-    src = imread(argv[1]);
-    if (src.empty()){
-        printf("colud not load image ..\n");
+    VideoCapture cap(0); //capture the video from web cam
+  
+    if (!cap.isOpened())  // if not success, exit program
+    {
+        cout << "Cannot open the web cam" << endl;
         return -1;
     }
-    reslutImage = src.clone();
-    namedWindow(input_image, cv::WINDOW_AUTOSIZE);
-    imshow(input_image, src);
     vector<Scalar> color1,color2;
     color1.push_back(Scalar(128, 0, 0));
     color1.push_back(Scalar(0, 128, 0));
@@ -268,23 +268,82 @@ int main(int argc, char ** argv)
     color2.push_back(Scalar(127, 255, 127));
     color2.push_back(Scalar(127, 127, 255));
     color2.push_back(Scalar(255, 255, 255));
-    for(int i = 0;i < (int)color1.size()&&i < (int)color2.size();i++){
-        // 二值化
-        inRange(src, color1[i], color2[i], gray_src);
-        threshold(gray_src, gray_src, 0, 255, THRESH_OTSU | THRESH_BINARY);
+    while (true){
+        Mat src, dst, gray_src,reslutImage;
+        bool bSuccess = cap.read(src); // read a new frame from video
+        if (!bSuccess) //if not success, break loop
+        {
+          cout << "Cannot read a frame from video stream" << endl;
+          break;
+        }
+        // src = imread(argv[1]);
+        // if (src.empty()){
+        //     printf("colud not load image ..\n");
+        //     return -1;
+        // }
+        reslutImage = src.clone();
+        namedWindow(input_image, cv::WINDOW_AUTOSIZE);
+        imshow(input_image, src);
+        for(int i = 0;i < (int)color1.size()&&i < (int)color2.size();i++){
+            // 二值化
+            inRange(src, color1[i], color2[i], gray_src);
+            threshold(gray_src, gray_src, 0, 255, THRESH_OTSU | THRESH_BINARY);
 
-        // 闭操作连接黑点
-        Mat kernel = getStructuringElement(MORPH_RECT, Size(5, 5), Point(-1, -1));
-        morphologyEx(gray_src, dst, MORPH_CLOSE, kernel, Point(-1, -1));
+            // 闭操作连接黑点
+            Mat kernel = getStructuringElement(MORPH_RECT, Size(5, 5), Point(-1, -1));
+            morphologyEx(gray_src, dst, MORPH_CLOSE, kernel, Point(-1, -1));
 
-        // 闭操作去毛点
-        kernel = getStructuringElement(MORPH_RECT, Size(5, 5), Point(-1, -1));
-        morphologyEx(dst, dst, MORPH_OPEN, kernel, Point(-1, -1));
-        imshow(to_string(i),dst);
-        draw(reslutImage,dst);
+            // 闭操作去毛点
+            kernel = getStructuringElement(MORPH_RECT, Size(5, 5), Point(-1, -1));
+            morphologyEx(dst, dst, MORPH_OPEN, kernel, Point(-1, -1));
+            // imshow(to_string(i),dst);
+            draw(reslutImage,dst);
+        }
+        putText(reslutImage,text, Point(20, 50), FONT_HERSHEY_PLAIN, 1, Scalar(0,0,255), 1, 2);
+        imshow("Reslut", reslutImage);
+        
+        // sleep(5);
+        char key = (char)waitKey(300);
+        if (key == 27)
+            break;
     }
-    putText(reslutImage,text, Point(20, 50), FONT_HERSHEY_PLAIN, 1, Scalar(0,0,255), 1, 2);
-    imshow("Reslut", reslutImage);
-    waitKey(0);
+
+
+    // Mat src, dst, gray_src,reslutImage;
+    // src = imread(argv[1]);
+    // if (src.empty()){
+    //     printf("colud not load image ..\n");
+    //     return -1;
+    // }
+    // reslutImage = src.clone();
+    // namedWindow(input_image, cv::WINDOW_AUTOSIZE);
+    // imshow(input_image, src);
+    // vector<Scalar> color1,color2;
+    // color1.push_back(Scalar(128, 0, 0));
+    // color1.push_back(Scalar(0, 128, 0));
+    // color1.push_back(Scalar(0, 0, 128));
+    // color1.push_back(Scalar(128, 128, 128));
+    // color2.push_back(Scalar(255, 127, 127));
+    // color2.push_back(Scalar(127, 255, 127));
+    // color2.push_back(Scalar(127, 127, 255));
+    // color2.push_back(Scalar(255, 255, 255));
+    // for(int i = 0;i < (int)color1.size()&&i < (int)color2.size();i++){
+    //     // 二值化
+    //     inRange(src, color1[i], color2[i], gray_src);
+    //     threshold(gray_src, gray_src, 0, 255, THRESH_OTSU | THRESH_BINARY);
+
+    //     // 闭操作连接黑点
+    //     Mat kernel = getStructuringElement(MORPH_RECT, Size(5, 5), Point(-1, -1));
+    //     morphologyEx(gray_src, dst, MORPH_CLOSE, kernel, Point(-1, -1));
+
+    //     // 闭操作去毛点
+    //     kernel = getStructuringElement(MORPH_RECT, Size(5, 5), Point(-1, -1));
+    //     morphologyEx(dst, dst, MORPH_OPEN, kernel, Point(-1, -1));
+    //     imshow(to_string(i),dst);
+    //     draw(reslutImage,dst);
+    // }
+    // putText(reslutImage,text, Point(20, 50), FONT_HERSHEY_PLAIN, 1, Scalar(0,0,255), 1, 2);
+    // imshow("Reslut", reslutImage);
+    // waitKey(0);
     return 0;
 }
